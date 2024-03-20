@@ -3,7 +3,22 @@
   max-width: 850px;
   padding: 50px;
   margin: 0 auto;
-  position: relative;
   border-radius: 10px;
   box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
+}
+
+[data-labs-visible="true"] {
+  display: flex;
+}
+
+[data-labs-visible="false"] {
+  display: none;
+}
+
+[data-lab-step] tbody:not(.lab-step-visible) {
+  display: none;
+}
+
+.lab-step-visible {
+  display: table-row-group;
 }
