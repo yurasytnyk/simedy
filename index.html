@@ -14,15 +14,27 @@
   </head>
   <body>
     <div id="app">
-      <div class="container mt-4 mb-5">
-        <header class="header">
-          <h1 class="text-center">Questionnaire</h1>
-          <p class="text-center">
-            Please take a moment to fill out our questionnaire. Your input is greatly appreciated!
-          </p>
-        </header>
+      <header>
+        <nav class="navbar fixed-top py-3">
+          <div class="container-fluid justify-content-end gap-2">
+            <button class="btn btn-light fill-form-btn">Fill forms</button>
+            <button class="btn btn-primary">Submit Questionnaire</button>
+          </div>
+        </nav>
+      </header>
 
-        <form class="questionnaire-form" method="post" enctype="multipart/form-data">
+      <section class="container mb-5 questionnaire-section">
+        <h1 class="text-center">Questionnaire</h1>
+        <p class="text-center">
+          Please take a moment to fill out our questionnaire. Your input is greatly appreciated!
+        </p>
+
+        <form
+          id="questionnaire"
+          class="questionnaire-form"
+          method="post"
+          enctype="multipart/form-data"
+        >
           <div class="row mb-4">
             <div class="col-md-6 form-group">
               <label for="name">Name</label>
@@ -32,6 +44,7 @@
                 id="name"
                 placeholder="Enter your name"
                 class="form-control"
+                data-default-value="Test user"
                 required
               />
             </div>
@@ -46,6 +59,7 @@
                 max="99"
                 class="form-control"
                 placeholder="Age"
+                data-default-value="20"
                 required
               />
             </div>
@@ -55,11 +69,12 @@
             <div class="form-group col-md-4">
               <label for="gender">Gender</label>
               <select
-                class="form-select"
+                class="form-select form-control"
                 id="gender"
                 name="gender"
                 required
                 aria-label="gender select"
+                data-default-value="male"
               >
                 <option disabled selected value>Choose your gender</option>
                 <option value="male">Male</option>
@@ -75,6 +90,7 @@
                 name="weight"
                 id="weight"
                 placeholder="Enter your weight"
+                data-default-value="20"
                 required
               />
             </div>
@@ -87,6 +103,7 @@
                 name="height"
                 id="height"
                 placeholder="Enter your height"
+                data-default-value="20"
                 required
               />
             </div>
@@ -124,10 +141,8 @@
               </div>
             </div>
           </div>
-
-          <button class="btn btn-primary mx-auto mt-4">Submit Questionnaire</button>
         </form>
-      </div>
+      </section>
 
       <div class="container mb-5">
         <div class="row">

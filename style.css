@@ -1,3 +1,15 @@
+:root {
+  --primary-color: #459ec2;
+}
+
+.navbar {
+  background-color: var(--primary-color);
+}
+
+.questionnaire-section {
+  margin-top: 5rem;
+}
+
 .questionnaire-form {
   background: #ffffff;
   max-width: 850px;

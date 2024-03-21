@@ -25,5 +25,17 @@ function toggleLabStep() {
   });
 }
 
+function fillForms() {
+  const fillFormBtn = document.querySelector(".fill-form-btn");
+  const defaultValues = document.forms["questionnaire"].querySelectorAll("[data-default-value]");
+
+  fillFormBtn.addEventListener("click", () => {
+    defaultValues.forEach((element) => {
+      element.value = element.dataset.defaultValue;
+    });
+  });
+}
+
 toggleLabsTable();
 toggleLabStep();
+fillForms();
